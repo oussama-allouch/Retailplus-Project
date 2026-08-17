@@ -1,0 +1,151 @@
+21:03:30  INFO      =================================================================
+21:03:30  INFO        RetailPlus — Générateur de Données v1.0
+21:03:30  INFO        Seed : 42  |  Output : C:\Users\OUSSAMA\Desktop\AISD master\PFA\RetailPlus Project\data_generator\output\csv
+21:03:30  INFO      =================================================================
+21:03:30  INFO      
+📂 [1/8] Génération des RÉFÉRENTIELS
+21:03:30  INFO        → Magasins
+21:03:30  INFO        ✅ dim_magasin.csv                                   5 lignes  (0.0 MB)
+21:03:30  INFO        → Fournisseurs
+21:03:30  INFO        ✅ dim_fournisseur.csv                               8 lignes  (0.0 MB)
+21:03:30  INFO        → Produits (500)
+21:03:30  INFO        ✅ dim_produit.csv                                 500 lignes  (0.0 MB)
+21:03:30  INFO        → Clients (10 000)
+21:03:31  INFO        ✅ dim_client_temp.csv                          10,000 lignes  (1.2 MB)
+21:03:31  INFO        → Dimension Temps (366 jours)
+21:03:31  INFO        ✅ dim_temps.csv                                   366 lignes  (0.0 MB)
+21:03:31  INFO      
+📂 [2/8] Génération des TRANSACTIONS
+21:03:31  INFO        → Stock (snapshots mensuels)
+21:03:32  INFO        ✅ fait_stock.csv                               30,000 lignes  (1.6 MB)
+21:03:32  INFO        → Commandes fournisseurs (~2 000)
+21:03:37  INFO        ✅ fait_commandes.csv                            2,000 lignes  (0.1 MB)
+21:03:37  INFO        ✅ fait_lignes_commandes.csv                    15,811 lignes  (0.7 MB)
+21:03:37  INFO        → Ventes (12 mois — cela peut prendre quelques minutes…)
+21:05:14  INFO      =================================================================
+21:05:14  INFO        RetailPlus -- Generateur de Donnees v1.0
+21:05:14  INFO        Seed : 42  |  Output : C:\Users\OUSSAMA\Desktop\AISD master\PFA\RetailPlus Project\data_generator\output\csv
+21:05:14  INFO      =================================================================
+21:05:14  INFO      
+[1/3] Generation des REFERENTIELS
+21:05:14  INFO        --> Magasins
+21:05:14  INFO        [OK] dim_magasin.csv                                   5 lignes  (0.0 MB)
+21:05:14  INFO        --> Fournisseurs
+21:05:14  INFO        [OK] dim_fournisseur.csv                               8 lignes  (0.0 MB)
+21:05:14  INFO        --> Produits (500)
+21:05:14  INFO        [OK] dim_produit.csv                                 500 lignes  (0.0 MB)
+21:05:14  INFO        --> Clients (10 000)
+21:05:15  INFO        [OK] dim_client_temp.csv                          10,000 lignes  (1.2 MB)
+21:05:15  INFO        --> Dimension Temps (366 jours)
+21:05:15  INFO        [OK] dim_temps.csv                                   366 lignes  (0.0 MB)
+21:05:15  INFO      
+[2/3] Generation des TRANSACTIONS
+21:05:15  INFO        --> Stock (snapshots mensuels)
+21:05:15  INFO        [OK] fait_stock.csv                               30,000 lignes  (1.6 MB)
+21:05:15  INFO        --> Commandes fournisseurs (~2 000)
+21:05:20  INFO        [OK] fait_commandes.csv                            2,000 lignes  (0.1 MB)
+21:05:20  INFO        [OK] fait_lignes_commandes.csv                    15,811 lignes  (0.7 MB)
+21:05:20  INFO        --> Ventes (12 mois -- cela peut prendre quelques minutes...)
+21:22:52  INFO      =================================================================
+21:22:52  INFO        RetailPlus -- Generateur de Donnees v1.0
+21:22:52  INFO        Seed : 42  |  Output : C:\Users\OUSSAMA\Desktop\AISD master\PFA\RetailPlus Project\data_generator\output\csv
+21:22:52  INFO      =================================================================
+21:22:52  INFO      
+[1/3] Generation des REFERENTIELS
+21:22:52  INFO        --> Magasins
+21:22:52  INFO        [OK] dim_magasin.csv                                   5 lignes  (0.0 MB)
+21:22:52  INFO        --> Fournisseurs
+21:22:52  INFO        [OK] dim_fournisseur.csv                               8 lignes  (0.0 MB)
+21:22:52  INFO        --> Produits (500)
+21:22:52  INFO        [OK] dim_produit.csv                                 500 lignes  (0.0 MB)
+21:22:52  INFO        --> Clients (10 000)
+21:22:53  INFO        [OK] dim_client_temp.csv                          10,000 lignes  (1.2 MB)
+21:22:53  INFO        --> Dimension Temps (366 jours)
+21:22:53  INFO        [OK] dim_temps.csv                                   366 lignes  (0.0 MB)
+21:22:53  INFO      
+[2/3] Generation des TRANSACTIONS
+21:22:53  INFO        --> Stock (snapshots mensuels)
+21:22:53  INFO        [OK] fait_stock.csv                               30,000 lignes  (1.6 MB)
+21:22:53  INFO        --> Commandes fournisseurs (~2 000)
+21:22:59  INFO        [OK] fait_commandes.csv                            2,000 lignes  (0.1 MB)
+21:22:59  INFO        [OK] fait_lignes_commandes.csv                    15,811 lignes  (0.7 MB)
+21:22:59  INFO        --> Ventes (12 mois -- cela peut prendre quelques minutes...)
+21:23:32  INFO      =================================================================
+21:23:32  INFO        RetailPlus -- Generateur de Donnees v1.0
+21:23:32  INFO        Seed : 42  |  Output : C:\Users\OUSSAMA\Desktop\AISD master\PFA\RetailPlus Project\data_generator\output\csv
+21:23:32  INFO      =================================================================
+21:23:32  INFO      
+[1/3] Generation des REFERENTIELS
+21:23:32  INFO        --> Magasins
+21:23:32  INFO        [OK] dim_magasin.csv                                   5 lignes  (0.0 MB)
+21:23:32  INFO        --> Fournisseurs
+21:23:32  INFO        [OK] dim_fournisseur.csv                               8 lignes  (0.0 MB)
+21:23:32  INFO        --> Produits (500)
+21:23:32  INFO        [OK] dim_produit.csv                                 500 lignes  (0.0 MB)
+21:23:32  INFO        --> Clients (10 000)
+21:23:33  INFO        [OK] dim_client_temp.csv                          10,000 lignes  (1.2 MB)
+21:23:33  INFO        --> Dimension Temps (366 jours)
+21:23:33  INFO        [OK] dim_temps.csv                                   366 lignes  (0.0 MB)
+21:23:33  INFO      
+[2/3] Generation des TRANSACTIONS
+21:23:33  INFO        --> Stock (snapshots mensuels)
+21:23:33  INFO        [OK] fait_stock.csv                               30,000 lignes  (1.6 MB)
+21:23:33  INFO        --> Commandes fournisseurs (~2 000)
+21:23:39  INFO        [OK] fait_commandes.csv                            2,000 lignes  (0.1 MB)
+21:23:39  INFO        [OK] fait_lignes_commandes.csv                    15,811 lignes  (0.7 MB)
+21:23:39  INFO        --> Ventes (12 mois -- cela peut prendre quelques minutes...)
+21:24:53  INFO      =================================================================
+21:24:53  INFO        RetailPlus -- Generateur de Donnees v1.0
+21:24:53  INFO        Seed : 42  |  Output : C:\Users\OUSSAMA\Desktop\AISD master\PFA\RetailPlus Project\data_generator\output\csv
+21:24:53  INFO      =================================================================
+21:24:53  INFO      
+[1/3] Generation des REFERENTIELS
+21:24:53  INFO        --> Magasins
+21:24:53  INFO        [OK] dim_magasin.csv                                   5 lignes  (0.0 MB)
+21:24:53  INFO        --> Fournisseurs
+21:24:53  INFO        [OK] dim_fournisseur.csv                               8 lignes  (0.0 MB)
+21:24:53  INFO        --> Produits (500)
+21:24:53  INFO        [OK] dim_produit.csv                                 500 lignes  (0.0 MB)
+21:24:53  INFO        --> Clients (10 000)
+21:24:54  INFO        [OK] dim_client_temp.csv                          10,000 lignes  (1.2 MB)
+21:24:54  INFO        --> Dimension Temps (366 jours)
+21:24:54  INFO        [OK] dim_temps.csv                                   366 lignes  (0.0 MB)
+21:24:54  INFO      
+[2/3] Generation des TRANSACTIONS
+21:24:54  INFO        --> Stock (snapshots mensuels)
+21:24:54  INFO        [OK] fait_stock.csv                               30,000 lignes  (1.6 MB)
+21:24:54  INFO        --> Commandes fournisseurs (~2 000)
+21:24:59  INFO        [OK] fait_commandes.csv                            2,000 lignes  (0.1 MB)
+21:24:59  INFO        [OK] fait_lignes_commandes.csv                    15,811 lignes  (0.7 MB)
+21:24:59  INFO        --> Ventes (12 mois -- cela peut prendre quelques minutes...)
+21:25:55  INFO            Ventes generees en 56.1s
+21:26:29  INFO        [OK] fait_ventes.csv                           4,255,379 lignes  (562.1 MB)
+21:26:30  INFO        [OK] fait_retours.csv                             80,985 lignes  (9.9 MB)
+21:26:30  INFO      
+[3/3] Mise a jour des segments clients
+21:26:33  INFO        [OK] dim_client.csv                               10,000 lignes  (1.1 MB)
+21:26:33  INFO      
+=================================================================
+21:26:33  INFO        RAPPORT DE GENERATION
+21:26:33  INFO      =================================================================
+21:26:33  INFO        Magasins              :          5
+21:26:33  INFO        Fournisseurs          :          8
+21:26:33  INFO        Produits              :        500
+21:26:33  INFO        Clients               :     10,000
+21:26:33  INFO        Jours (temps)         :        366
+21:26:33  INFO        Snapshots stock       :     30,000
+21:26:33  INFO        Commandes             :      2,000
+21:26:33  INFO        Lignes commandes      :     15,811
+21:26:33  INFO        Lignes ventes         :  4,255,379
+21:26:33  INFO        Retours               :     80,985
+21:26:34  INFO      
+  Erreurs intentionnelles injectees :
+21:26:34  INFO           Doublons ventes         :  123,675
+21:26:34  INFO           Quantites invalides     :   84,906
+21:26:34  INFO           Prix negatifs           :   97,644
+21:26:34  INFO           Emails invalides        :      489
+21:26:34  INFO      
+  Duree totale : 100.6s
+21:26:34  INFO      =================================================================
+21:26:34  INFO        Tous les CSV sont dans : C:\Users\OUSSAMA\Desktop\AISD master\PFA\RetailPlus Project\data_generator\output\csv
+21:26:34  INFO      =================================================================

@@ -1,0 +1,159 @@
+# RetailPlus — docker-compose.yml
+
+services:
+  # ─── 1. STREAMING LAYER (KAFKA & ZOOKEEPER) ─────────────────────────────────
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.4.0
+    container_name: retailplus-zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    networks:
+      - retailplus-network
+
+  kafka:
+    image: confluentinc/cp-kafka:7.4.0
+    container_name: retailplus-kafka
+    ports:
+      - "9092:9092"
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    networks:
+      - retailplus-network
+
+  # ─── 2. DATABASE LAYER (POSTGRES DWH) ───────────────────────────────────────
+  postgres-dwh:
+    image: postgres:15-alpine
+    container_name: retailplus-postgres-dwh
+    ports:
+      - "5434:5432"
+    environment:
+      POSTGRES_USER: retailuser
+      POSTGRES_PASSWORD: retailpassword
+      POSTGRES_DB: retailplus
+    volumes:
+      - postgres_dwh_data:/var/lib/postgresql/data
+      - ./docker/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - retailplus-network
+
+  # ─── 3. PROCESSING LAYER (APACHE SPARK) ─────────────────────────────────────
+  spark-master:
+    image: apache/spark:3.5.9
+    container_name: retailplus-spark-master
+    ports:
+      - "8080:8080"
+      - "7077:7077"
+    environment:
+      - SPARK_NO_DAEMONIZE=true
+    command: /opt/spark/sbin/start-master.sh
+    volumes:
+      - .:/opt/spark/workspace
+    networks:
+      - retailplus-network
+
+  spark-worker:
+    image: apache/spark:3.5.9
+    container_name: retailplus-spark-worker
+    depends_on:
+      - spark-master
+    ports:
+      - "8082:8081"
+    environment:
+      - SPARK_NO_DAEMONIZE=true
+      - SPARK_WORKER_CORES=2
+      - SPARK_WORKER_MEMORY=2g
+    command: /opt/spark/sbin/start-worker.sh spark://spark-master:7077
+    volumes:
+      - .:/opt/spark/workspace
+    networks:
+      - retailplus-network
+
+  # ─── 4. ORCHESTRATION LAYER (APACHE AIRFLOW) ────────────────────────────────
+  airflow-db:
+    image: postgres:15-alpine
+    container_name: retailplus-airflow-db
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - postgres_airflow_data:/var/lib/postgresql/data
+    networks:
+      - retailplus-network
+
+  airflow-init:
+    image: apache/airflow:2.7.1-python3.10
+    container_name: retailplus-airflow-init
+    depends_on:
+      - airflow-db
+    environment:
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@airflow-db/airflow
+    command: >
+      bash -c "airflow db init && airflow users create --username admin --firstname admin --lastname admin --role Admin --email admin@example.com --password admin"
+    networks:
+      - retailplus-network
+
+  airflow-webserver:
+    image: apache/airflow:2.7.1-python3.10
+    container_name: retailplus-airflow-webserver
+    depends_on:
+      airflow-db:
+        condition: service_started
+      airflow-init:
+        condition: service_completed_successfully
+    ports:
+      - "8081:8080"
+    environment:
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@airflow-db/airflow
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+    command: webserver
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/logs:/opt/airflow/logs
+      - ./airflow/plugins:/opt/airflow/plugins
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - retailplus-network
+
+  airflow-scheduler:
+    image: apache/airflow:2.7.1-python3.10
+    container_name: retailplus-airflow-scheduler
+    depends_on:
+      airflow-db:
+        condition: service_started
+      airflow-init:
+        condition: service_completed_successfully
+    environment:
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@airflow-db/airflow
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+    command: scheduler
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/logs:/opt/airflow/logs
+      - ./airflow/plugins:/opt/airflow/plugins
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - retailplus-network
+
+networks:
+  retailplus-network:
+    name: retailplus-net
+    driver: bridge
+
+volumes:
+  postgres_dwh_data:
+    driver: local
+  postgres_airflow_data:
+    driver: local

@@ -1,0 +1,29 @@
+2026-08-10 21:14:04,805 [INFO] <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+2026-08-10 21:14:04,806 [INFO] Probing node bootstrap-0 broker version
+2026-08-10 21:14:04,806 [INFO] <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Connection complete.
+2026-08-10 21:14:05,176 [INFO] Broker version identified as 2.6.0
+2026-08-10 21:14:05,176 [INFO] Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+2026-08-10 21:14:05,178 [INFO] ✅ Connexion Kafka établie → localhost:9092
+2026-08-10 21:14:05,179 [INFO] 🚀 Démarrage du simulateur RetailPlus — appuyez sur Ctrl+C pour arrêter
+2026-08-10 21:14:05,185 [INFO] <BrokerConnection node_id=1 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+2026-08-10 21:14:05,185 [INFO] <BrokerConnection node_id=1 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Connection complete.
+2026-08-10 21:14:05,185 [INFO] <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. 
+2026-08-10 21:14:54,767 [INFO] 📊 100 événements envoyés vers [retailplus.ventes]
+2026-08-10 21:15:44,846 [INFO] 📊 200 événements envoyés vers [retailplus.ventes]
+2026-08-10 21:16:34,934 [INFO] 📊 300 événements envoyés vers [retailplus.ventes]
+2026-08-10 21:17:25,012 [INFO] 📊 400 événements envoyés vers [retailplus.ventes]
+2026-08-10 21:18:15,093 [INFO] 📊 500 événements envoyés vers [retailplus.ventes]
+2026-08-10 21:19:05,182 [INFO] 📊 600 événements envoyés vers [retailplus.ventes]
+2026-08-10 21:19:55,264 [INFO] 📊 700 événements envoyés vers [retailplus.ventes]
+2026-08-10 21:20:45,359 [INFO] 📊 800 événements envoyés vers [retailplus.ventes]
+2026-08-10 21:21:35,446 [INFO] 📊 900 événements envoyés vers [retailplus.ventes]
+2026-08-10 21:22:25,529 [INFO] 📊 1000 événements envoyés vers [retailplus.ventes]
+2026-08-10 21:23:15,621 [INFO] 📊 1100 événements envoyés vers [retailplus.ventes]
+2026-08-10 21:24:05,707 [INFO] 📊 1200 événements envoyés vers [retailplus.ventes]
+2026-08-10 21:24:55,800 [INFO] 📊 1300 événements envoyés vers [retailplus.ventes]
+2026-08-10 21:25:45,888 [INFO] 📊 1400 événements envoyés vers [retailplus.ventes]
+2026-08-10 21:26:35,974 [INFO] 📊 1500 événements envoyés vers [retailplus.ventes]
+2026-08-10 21:27:26,064 [INFO] 📊 1600 événements envoyés vers [retailplus.ventes]
+2026-08-10 21:28:16,149 [INFO] 📊 1700 événements envoyés vers [retailplus.ventes]
+2026-08-10 21:29:06,255 [INFO] 📊 1800 événements envoyés vers [retailplus.ventes]
+2026-08-10 21:29:56,381 [INFO] 📊 1900 événements envoyés vers [retailplus.ventes]
