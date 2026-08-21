@@ -166,8 +166,25 @@ Le schéma modélise les ventes, les retours de marchandises, les mouvements de 
 
 ---
 
-## 5. Prochaine Étape
+### Étape 10 : Vues Analytiques & Tableaux de Bord Décisionnels (BI & Streamlit) (Validée)
+* **Vues SQL Analytiques (`gold`)** :
+  * Développé le script [gold_views.sql](file:///C:/Users/OUSSAMA/Desktop/AISD%20master/PFA/RetailPlus%20Project/docker/postgres/gold_views.sql) créant 7 vues analytiques matérialisées (`vue_kpis_globaux`, `vue_ventes_mensuelles`, `vue_performance_magasins`, `vue_performance_produits`, `vue_segmentation_clients`, `vue_gestion_stocks`, `vue_analyse_retours`).
+* **Application Dashboard Décisionnel Interactif (Streamlit & Plotly)** :
+  * Développé le connecteur [db_connector.py](file:///C:/Users/OUSSAMA/Desktop/AISD%20master/PFA/RetailPlus%20Project/dashboard/db_connector.py) avec SQLAlchemy et mise en cache `@st.cache_data`.
+  * Développé l'application [app.py](file:///C:/Users/OUSSAMA/Desktop/AISD%20master/PFA/RetailPlus%20Project/dashboard/app.py) avec navigation 6 modules (Exécutif, Magasins, Produits, Clients, Stocks, Retours) et graphiques interactifs Plotly.
+  * Validé avec succès via le script de test [test_queries.py](file:///C:/Users/OUSSAMA/Desktop/AISD%20master/PFA/RetailPlus%20Project/dashboard/test_queries.py) et accessible localement sur `http://localhost:8501`.
 
-### Étape 10 : Vues Analytiques & Tableaux de Bord Décisionnels (BI & Data Visualization)
-* Développer les vues SQL décisionnelles ou rapports analytiques (Performance Magasins, Comportement Clients, Gestion des Stocks, Analyse des Retours).
-* Créer des dashboards / interfaces de visualisation de données branchées directement sur le schéma `gold`.
+---
+
+## 5. Bilan Global du Projet (Toutes Étapes Validées)
+
+Toutes les étapes du cycle de vie de la plateforme de données RetailPlus ont été développées, testées et validées de bout en bout :
+- **Étape 1 & 2** : Cadrage, Architecture & Modèle Médaillon
+- **Étape 3** : Infrastructure Docker (PostgreSQL, Kafka, Spark, Airflow)
+- **Étape 4** : Générateur de Données & Simulateur Temps Réel
+- **Étape 5 & 6** : Ingestion Batch (CSV) & Streaming (Kafka) vers Bronze
+- **Étape 7** : Pipeline de Nettoyage, Déduplication & Qualité vers Silver
+- **Étape 8** : Modélisation Dimensionnelle & Star Schema vers Gold
+- **Étape 9** : Orchestration Globale des DAGs Apache Airflow
+- **Étape 10** : Vues Analytiques & Dashboard Décisionnel BI Streamlit
+
