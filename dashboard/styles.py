@@ -603,8 +603,10 @@ LIGHT_THEME_CSS = """
 """
 
 
-def inject_styles(is_dark: bool = True):
+def inject_styles(is_dark: bool = True, *args, **kwargs):
     """Injecte la feuille de style globale dynamique (Dark ou Light)."""
+    if "is_dark" in kwargs:
+        is_dark = kwargs["is_dark"]
     css = DARK_THEME_CSS if is_dark else LIGHT_THEME_CSS
     st.markdown(css, unsafe_allow_html=True)
 
