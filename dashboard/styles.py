@@ -11,12 +11,114 @@ ENTERPRISE_CSS = """
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-    /* Global Typography & Canvas */
-    html, body, [class*="css"], .stApp {
+    /* Global Typography & Canvas — Force Dark on ALL elements */
+    html, body, [class*="css"], .stApp,
+    .stApp > header,
+    .main .block-container,
+    div[data-testid="stAppViewContainer"],
+    div[data-testid="stHeader"],
+    div[data-testid="stToolbar"],
+    div[data-testid="stDecoration"],
+    div[data-testid="stStatusWidget"] {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
         background-color: #090d16 !important;
         color: #f1f5f9 !important;
     }
+
+    /* Force dark on ALL text elements */
+    h1, h2, h3, h4, h5, h6,
+    p, span, label, div,
+    .stMarkdown, .stText,
+    [data-testid="stMarkdownContainer"],
+    [data-testid="stMarkdownContainer"] p,
+    [data-testid="stMarkdownContainer"] span,
+    [data-testid="stMarkdownContainer"] h1,
+    [data-testid="stMarkdownContainer"] h2,
+    [data-testid="stMarkdownContainer"] h3 {
+        color: #f1f5f9 !important;
+    }
+
+    /* Sidebar — All Elements */
+    section[data-testid="stSidebar"],
+    section[data-testid="stSidebar"] > div,
+    section[data-testid="stSidebar"] [data-testid="stMarkdownContainer"],
+    section[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p,
+    section[data-testid="stSidebar"] label,
+    section[data-testid="stSidebar"] span {
+        background-color: #0b1120 !important;
+        color: #f1f5f9 !important;
+    }
+
+    /* Radio buttons, Selectbox, Inputs */
+    [data-testid="stRadio"] label,
+    [data-testid="stRadio"] label span,
+    [data-testid="stRadio"] label p,
+    [data-testid="stSelectbox"] label,
+    [data-testid="stSelectbox"] label span,
+    div[data-baseweb="select"] {
+        color: #f1f5f9 !important;
+    }
+
+    div[data-baseweb="select"] > div {
+        background-color: #1e293b !important;
+        border-color: rgba(255, 255, 255, 0.1) !important;
+        color: #f1f5f9 !important;
+    }
+
+    div[data-baseweb="popover"] > div,
+    div[data-baseweb="menu"],
+    ul[role="listbox"],
+    ul[role="listbox"] li {
+        background-color: #1e293b !important;
+        color: #f1f5f9 !important;
+    }
+
+    ul[role="listbox"] li:hover {
+        background-color: #334155 !important;
+    }
+
+    /* Buttons */
+    .stButton > button {
+        background-color: #1e293b !important;
+        color: #f1f5f9 !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .stButton > button:hover {
+        background-color: #334155 !important;
+        border-color: rgba(6, 182, 212, 0.4) !important;
+    }
+
+    /* Dividers & Horizontal Rules */
+    hr {
+        border-color: rgba(255, 255, 255, 0.06) !important;
+    }
+
+    /* Dataframes */
+    .stDataFrame, .stTable,
+    [data-testid="stDataFrame"],
+    [data-testid="stDataFrame"] div {
+        background-color: #0f172a !important;
+        color: #f1f5f9 !important;
+    }
+
+    /* Warnings & Info boxes */
+    .stAlert {
+        background-color: #1e293b !important;
+        color: #f1f5f9 !important;
+    }
+
+    /* Plotly chart container */
+    .stPlotlyChart {
+        background-color: transparent !important;
+    }
+
+    /* Expander */
+    [data-testid="stExpander"] {
+        background-color: #0f172a !important;
+        border-color: rgba(255, 255, 255, 0.07) !important;
+    }
+
 
     /* Streamlit Main Container Spacing */
     .block-container {
