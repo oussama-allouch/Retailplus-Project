@@ -32,8 +32,14 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Injection du Design System
-inject_styles()
+# Initialisation du thème dans session_state (par défaut : dark)
+if "theme" not in st.session_state:
+    st.session_state["theme"] = "dark"
+
+is_dark = st.session_state["theme"] == "dark"
+
+# Injection du Design System Dynamique
+inject_styles(is_dark=is_dark)
 
 
 # ─── Barre Latérale (Enterprise Navigation & Global Filters) ─────────────────
@@ -54,6 +60,12 @@ with st.sidebar:
         </div>
     </div>
     """, unsafe_allow_html=True)
+
+    # Bouton de basculement de thème dans la Sidebar
+    sidebar_theme_label = "☀️ Mode Clair" if is_dark else "🌙 Mode Sombre"
+    if st.button(sidebar_theme_label, key="btn_toggle_theme_sidebar", use_container_width=True):
+        st.session_state["theme"] = "light" if is_dark else "dark"
+        st.rerun()
 
     st.markdown("<hr style='border-color: rgba(255,255,255,0.06); margin: 8px 0 16px 0;'>", unsafe_allow_html=True)
 
